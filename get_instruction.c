@@ -6,7 +6,7 @@
  */
 int n = 0;
 
-void (*get_instruction(char *line, unsigned int line_number))\
+void (*get_instruction(char *line, unsigned int line_number))
 (stack_t **stack, unsigned int line_number)
 {
 	instruction_t instruct[] = {
@@ -20,7 +20,7 @@ void (*get_instruction(char *line, unsigned int line_number))\
 
 	command = strtok(line, " \n");
 	if (command == NULL)
-		return NULL;
+		return (NULL);
 
 	while (instruct[i].opcode != NULL)
 	{
@@ -36,7 +36,7 @@ void (*get_instruction(char *line, unsigned int line_number))\
 					exit(EXIT_FAILURE);
 				}
 			}
-			return instruct[i].f;
+			return (instruct[i].f);
 		}
 		i++;
 	}
