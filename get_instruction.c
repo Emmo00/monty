@@ -17,11 +17,11 @@ void (*get_instruction(char *line, unsigned int line_number))(stack_t **stack, u
 	char *command;
 
 	i = 0;
-	command = strtok(line, " ");
-	if (strncmp(command, "pall", 4) == 0)
+	command = strtok(line, " \n");
+	if (strcmp(command, "pall") == 0)
 		return (instruct[i].f);
 	i++;
-	if (strncmp(command, "pass", 4) == 0)
+	if (strcmp(command, "pass") == 0)
 	{
 		command = strtok(NULL, " \n");
 		n = atoi(command);
