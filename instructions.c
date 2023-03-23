@@ -32,7 +32,7 @@ void pall(stack_t **stack, unsigned int line_number)
 {
 	unsigned int len;
 	stack_t *node;
-	__attribute__((unused)) line_number;
+	unsigned int __attribute__((unused)) line_number;
 
 	len = 0;
 	node = *stack;
