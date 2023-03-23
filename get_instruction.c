@@ -12,6 +12,7 @@ void (*get_instruction(char *line, unsigned int line_number))
 		{"pall", pall},
 		{"push", push},
 		{"pint", pint},
+		{"pop", pop},
 		{"", NULL}
 	};
 
