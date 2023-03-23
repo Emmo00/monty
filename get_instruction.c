@@ -19,6 +19,7 @@ void (*get_instruction(char *line, unsigned int line_number))(stack_t **stack, u
 	i = 0;
 	printf("%s\n", line);
 	command = strtok(line, " \n");
+	printf("%d", command);
 	if (strcmp(command, "pall") == 0)
 		return (instruct[i].f);
 	i++;
