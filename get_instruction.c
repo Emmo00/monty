@@ -12,6 +12,7 @@ void (*get_instruction(char *line, unsigned int line_number))(stack_t **stack, u
 		{"", NULL}};
 
 	int i;
+	int n = 0;
 	char *command;
 
 	i = 0;
