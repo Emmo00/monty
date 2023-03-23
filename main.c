@@ -9,7 +9,7 @@ int main(int ac, char **av)
 {
 	char *file_name, line[254];
 	FILE *monty_file;
-	stack_t *head;
+	stack_t *stack;
 	void (*instruction)(stack_t **stack, unsigned int line_number);
 	unsigned int line_number;
 
@@ -20,7 +20,7 @@ int main(int ac, char **av)
 	}
 	file_name = av[1];
 	monty_file = fopen(file_name, "r");
-	head = NULL;
+	stack = NULL;
 	if (monty_file == NULL)
 	{
 		fprintf(stderr, "Error: Can't open file %s\n", file_name);
@@ -30,7 +30,7 @@ int main(int ac, char **av)
 	while (fgets(line, sizeof(line), monty_file))
 	{
 		instruction = get_instruction(line, line_number);
-		instruction(&head, line_number);
+		instruction(&stack, line_number);
 		line_number++;
 	}
 	exit(EXIT_SUCCESS);
