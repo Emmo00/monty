@@ -26,7 +26,7 @@ void (*get_instruction(char *line, unsigned int line_number))(stack_t **stack, u
 		if (n == 0)
 		{
 			fprintf(stderr, "L%d: usage: push integer\n", line_number);
-			return (EXIT_FAILURE);
+			exit(EXIT_FAILURE);
 		}
 		return (instruct[i].f);
 	}
