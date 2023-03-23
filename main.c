@@ -29,18 +29,7 @@ int main(int ac, char **av)
 	line_number = 1;
 	while (fgets(line, sizeof(line), monty_file))
 	{
-		for (j = 0; (tok = strtok(line, " ")) != NULL; j++, line = NULL)
-		{
-			if (j == 0)
-				command = tok;
-			if (i == 1)
-				number_string = tok;
-		}
-		int n = atoi(number_string);
-		if (n == 0)
-		{
-		}
-		instruction = get_instruction(line);
+		instruction = get_instruction(line, line_number);
 		instruction(&head, line_number);
 		line_number++;
 	}

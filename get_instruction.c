@@ -4,28 +4,32 @@
  * @line: string to extract command
  * Return: pointer to instruction function1
  */
-void (*get_instruction(char *command))(stack_t **stack, unsigned int line_number)
+void (*get_instruction(char *line, unsigned int line_number))(stack_t **stack, unsigned int line_number)
 {
 	instruction_t instruct[] = {
-		{"pass", push},
 		{"pall", pall},
+		{"pass", push},
 		{"", NULL}};
-	int i, j;
+
+	int i;
+	char *command;
 
 	i = 0;
-	while (instruct[i].opcode)
+	command = strtok(line, " \n");
+	if (strncmp(command, "pall", 4) == 0)
+		return (instruct[i].f);
+	i++;
+	if (strncmp(command, "pass", 4) == 0)
 	{
-		if (strncmp(command, instruct[i].opcode, 4) == 0)
+		command = strtok(NULL, " \n");
+		n = atoi(command);
+		if (n == 0)
 		{
-			if (command + 4 != NULL)
-				int n = atoi(command + 5);
-			if (n == 0)
-			{
-				fprintf(stderr, "L%d: usage: push integer", line_number);
-			}
-			return (instruct[i].f);
+			fprintf(stderr, "L%d: usage: push integer\n", line_number);
+			return (EXIT_FAILURE);
 		}
-		i++;
+		return (instruct[i].f);
 	}
+	i++;
 	return (instruct[i].f);
 }
