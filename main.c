@@ -30,11 +30,6 @@ int main(int ac, char **av)
 	while (fgets(line, sizeof(line), monty_file))
 	{
 		instruction = get_instruction(line, line_number);
-		if (instruction == NULL)
-		{
-			fprintf(stderr, "L%d: unknown instruction <opcode>\n", line_number);
-			exit(EXIT_FAILURE);
-		}
 		instruction(&head, line_number);
 		line_number++;
 	}

@@ -11,6 +11,7 @@ void (*get_instruction(char *line, unsigned int line_number))
 	instruction_t instruct[] = {
 		{"pall", pall},
 		{"push", push},
+		{"pint", pint},
 		{"", NULL}
 	};
 

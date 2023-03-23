@@ -46,3 +46,17 @@ void pall(stack_t **stack, unsigned int line_number)
 		len++;
 	}
 }
+/**
+ * pint - prints the value at the top stack
+ * @stack: pointer to pointer to stack
+ * @line_number: line number
+ * Return: nothing
+*/
+void pint(stack_t **stack, unsigned int line_number)
+{
+	if (*stack == NULL)
+	{
+		fprintf(stderr, "L%d: can't pint, stack empty", line_number);
+	}
+	printf("%d\n", (*stack)->n);
+}
