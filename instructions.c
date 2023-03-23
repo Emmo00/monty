@@ -36,6 +36,8 @@ void pall(stack_t **stack, unsigned int line_number)
 	(void)line_number;
 
 	len = 0;
+	if (*stack == NULL)
+		return;
 	node = *stack;
 	while (node != NULL)
 	{
