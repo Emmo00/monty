@@ -37,11 +37,11 @@ typedef struct instruction_s
 } instruction_t;
 
 /* Function prototypes */
-void (*get_instruction(char *command))(stack_t **stack, unsigned int line_number);
+void (*get_instruction(char *line))(stack_t **stack, unsigned int line_number);
 void push(stack_t **stack, unsigned int line_number);
 void pall(stack_t **stack, unsigned int line_number);
 
 /* Monty File Pointer */
-extern FILE *monty_file;
+extern int n; /* int passed in command */
 
 #endif /* MONTY_H */

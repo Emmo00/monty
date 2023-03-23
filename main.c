@@ -1,16 +1,16 @@
-#include"monty.h"
+#include "monty.h"
 /**
  * main - entry point
  * @ac: argument count
  * @av: argument vector
  * Return: standard exit - success or failure
-*/
+ */
 int main(int ac, char **av)
 {
-	char *file_name, line[254];
+	char *file_name, line[254], *tok, *command;
 	FILE *monty_file;
 	stack_t *head;
-	void (*instruction)(stack_t **stack, unsigned int line_number);
+	void (*instruction)(stack_t * *stack, unsigned int line_number);
 	unsigned int line_number;
 
 	if (ac != 2)
@@ -29,6 +29,17 @@ int main(int ac, char **av)
 	line_number = 1;
 	while (fgets(line, sizeof(line), monty_file))
 	{
+		for (j = 0; (tok = strtok(line, " ")) != NULL; j++, line = NULL)
+		{
+			if (j == 0)
+				command = tok;
+			if (i == 1)
+				number_string = tok;
+		}
+		int n = atoi(number_string);
+		if (n == 0)
+		{
+		}
 		instruction = get_instruction(line);
 		instruction(&head, line_number);
 		line_number++;
