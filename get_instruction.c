@@ -8,32 +8,38 @@ int n = 0;
 
 void (*get_instruction(char *line, unsigned int line_number))(stack_t **stack, unsigned int line_number)
 {
-	instruction_t instruct[] = {
-		{"pall", pall},
-		{"pass", push},
-		{"", NULL}};
+    instruction_t instruct[] = {
+        {"pall", pall},
+        {"push", push},
+        {"", NULL}
+    };
 
-	int i;
-	char *command;
+    int i = 0;
+    char *command;
 
-	i = 0;
-	printf("%s\n", line);
-	command = strtok(line, " \n");
-	printf("%scommand", command);
-	if (strcmp(command, "pall") == 0)
-		return (instruct[i].f);
-	i++;
-	if (strcmp(command, "pass") == 0)
-	{
-		command = strtok(NULL, " \n");
-		n = atoi(command);
-		if (n == 0)
-		{
-			fprintf(stderr, "L%d: usage: push integer\n", line_number);
-			exit(EXIT_FAILURE);
-		}
-		return (instruct[i].f);
-	}
-	i++;
-	return (instruct[i].f);
+    command = strtok(line, " \n");
+    if (command == NULL)
+        return NULL;
+
+    while (instruct[i].opcode != NULL)
+    {
+        if (strcmp(command, instruct[i].opcode) == 0)
+        {
+            if (strcmp(command, "push") == 0)
+            {
+                command = strtok(NULL, " \n");
+                n = atoi(command);
+                if (n == 0)
+                {
+                    fprintf(stderr, "L%d: usage: push integer\n", line_number);
+                    exit(EXIT_FAILURE);
+                }
+            }
+            return instruct[i].f;
+        }
+        i++;
+    }
+
+    fprintf(stderr, "L%d: unknown instruction %s\n", line_number, command);
+    exit(EXIT_FAILURE);
 }
