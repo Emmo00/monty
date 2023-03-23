@@ -42,6 +42,6 @@ void push(stack_t **stack, unsigned int line_number);
 void pall(stack_t **stack, unsigned int line_number);
 
 /* Monty File Pointer */
-int n = 0; /* int passed in command */
+extern int n; /* int passed in command */
 
 #endif /* MONTY_H */
