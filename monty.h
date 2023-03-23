@@ -38,8 +38,8 @@ typedef struct instruction_s
 
 /* Function prototypes */
 void (*get_instruction(char *line, unsigned int line_number))(stack_t **stack, unsigned int line_number);
-stack_t *push(stack_t **stack, unsigned int line_number);
-unsigned int pall(stack_t **stack, unsigned int line_number);
+void *push(stack_t **stack, unsigned int line_number);
+void pall(stack_t **stack, unsigned int line_number);
 
 /* Monty File Pointer */
 extern int n; /* int passed in command */

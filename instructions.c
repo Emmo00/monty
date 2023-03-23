@@ -5,7 +5,7 @@
  * @line_number: line number being read
  * Return: nothing
  */
-stack_t *push(stack_t **stack, unsigned int line_number)
+void push(stack_t **stack, unsigned int line_number)
 {
 	stack_t *node;
 
@@ -21,7 +21,6 @@ stack_t *push(stack_t **stack, unsigned int line_number)
 	if (*stack != NULL)
 		(*stack)->prev = node;
 	*stack = node;
-	return (node);
 }
 /**
  * pall - print all nodes in a stack stack_t
@@ -29,7 +28,7 @@ stack_t *push(stack_t **stack, unsigned int line_number)
  * @line_number: line number being read
  * Return: nothing
  */
-unsigned int pall(stack_t **stack, unsigned int line_number)
+void pall(stack_t **stack, unsigned int line_number)
 {
 	unsigned int len;
 	stack_t *node;
@@ -43,5 +42,4 @@ unsigned int pall(stack_t **stack, unsigned int line_number)
 		node = node->next;
 		len++;
 	}
-	return (len);
 }
