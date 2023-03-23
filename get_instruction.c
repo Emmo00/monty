@@ -33,12 +33,10 @@ void (*get_instruction(char *line, unsigned int line_number))(
 				n = atoi(command);
 				if (n == 0)
 				{
-					free(command);
 					fprintf(stderr, "L%d: usage: push integer\n", line_number);
 					exit(EXIT_FAILURE);
 				}
 			}
-			free(command);
 			return (instruct[i].f);
 		}
 		i++;
