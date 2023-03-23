@@ -13,6 +13,7 @@ void (*get_instruction(char *line, unsigned int line_number))(
 		{"push", push},
 		{"pint", pint},
 		{"pop", pop},
+		{"swap", swap},
 		{"", NULL}
 	};
 
