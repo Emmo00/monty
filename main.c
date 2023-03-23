@@ -10,7 +10,7 @@ int main(int ac, char **av)
 	char *file_name, line[254];
 	FILE *monty_file;
 	stack_t *head;
-	void (*instruction)(stack_t * *stack, unsigned int line_number);
+	void (*instruction)(stack_t **stack, unsigned int line_number);
 	unsigned int line_number;
 
 	if (ac != 2)
