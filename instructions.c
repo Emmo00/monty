@@ -1,11 +1,11 @@
-#include"monty.h"
+#include "monty.h"
 /**
  * push - add a new node to the stack stack_t
  * @stack: pointer to pointer to head of stack_t
  * @line_number: line number being read
  * Return: nothing
-*/
-void push(stack_t **stack, unsigned int line_number)
+ */
+stack_t *push(stack_t **stack, unsigned int line_number)
 {
 	stack_t *node;
 
@@ -28,11 +28,12 @@ void push(stack_t **stack, unsigned int line_number)
  * @stack: pointer to pointer to head of stack_t
  * @line_number: line number being read
  * Return: nothing
-*/
-void pall(stack_t **stack, unsigned int line_number)
+ */
+unsigned int pall(stack_t **stack, unsigned int line_number)
 {
 	unsigned int len;
 	stack_t *node;
+	__attribute__((unused)) line_number;
 
 	len = 0;
 	node = *stack;
