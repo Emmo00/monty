@@ -1,11 +1,10 @@
 #include "monty.h"
+int n = 0;
 /**
  * get_instruction - get monty instruction
  * @line: string to extract command
  * Return: pointer to instruction function1
  */
-int n = 0;
-
 void (*get_instruction(char *line, unsigned int line_number))
 (stack_t **stack, unsigned int line_number)
 {
