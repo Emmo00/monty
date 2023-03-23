@@ -4,8 +4,6 @@
  * @line: string to extract command
  * Return: pointer to instruction function1
  */
-int n = 0;
-
 void (*get_instruction(char *line, unsigned int line_number))(stack_t **stack, unsigned int line_number)
 {
 	instruction_t instruct[] = {
