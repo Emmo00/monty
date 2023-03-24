@@ -25,8 +25,10 @@ void (*get_instruction(char *line, unsigned int line_number))(
 
 	command = strtok(line, " \n");
 	if (command == NULL)
-		return (NULL);
-
+	{
+		fprintf(stderr, "L%d: invalid command\n", line_number);
+		exit(EXIT_FAILURE);
+	}
 	while (instruct[i].opcode != NULL)
 	{
 		if (strcmp(command, instruct[i].opcode) == 0)
