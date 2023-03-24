@@ -37,11 +37,9 @@ void push(stack_t **stack, unsigned int line_number)
  */
 void pall(stack_t **stack, unsigned int line_number)
 {
-	unsigned int len;
 	stack_t *node;
 	(void)line_number;
 
-	len = 0;
 	if (*stack == NULL)
 		return;
 	node = *stack;
@@ -49,7 +47,6 @@ void pall(stack_t **stack, unsigned int line_number)
 	{
 		printf("%d\n", node->n);
 		node = node->next;
-		len++;
 	}
 }
 /**
