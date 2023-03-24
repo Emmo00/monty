@@ -1,9 +1,12 @@
 #include "monty.h"
+
 int n = 0;
+
 /**
- * get_instruction - get monty instruction
- * @line: string to extract command
- * Return: pointer to instruction function1
+ * get_instruction - Get Monty instruction
+ * @line: String to extract command
+ * @line_number: Line number of the current command
+ * Return: Pointer to instruction function
  */
 void (*get_instruction(char *line, unsigned int line_number))(
 	stack_t **stack, unsigned int line_number)
