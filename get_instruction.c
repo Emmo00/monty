@@ -18,7 +18,7 @@ void (*get_instruction(char *line, unsigned int line_number))(
 		{"swap", swap},
 		{"add", add},
 		{"sub", sub},
-		{"div", div},
+		{"div", _div},
 		{"mul", mul},
 		{"mod", mod},
 		{"#", comment},
