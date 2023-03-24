@@ -36,7 +36,6 @@ typedef struct instruction_s
 	void (*f)(stack_t **stack, unsigned int line_number);
 } instruction_t;
 
-/* Function prototypes */
 void (*get_instruction(char *line, unsigned int line_number))(
 	stack_t **stack, unsigned int line_number);
 void push(stack_t **stack, unsigned int line_number);
