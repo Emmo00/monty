@@ -15,7 +15,7 @@ void add(stack_t **stack, unsigned int line_number)
 		exit(EXIT_FAILURE);
 	}
 	tmp = *stack;
-    tmp->next->n += tmp->n;
+	tmp->next->n += tmp->n;
 	*stack = tmp->next;
 	free(tmp);
 }
@@ -28,6 +28,6 @@ void add(stack_t **stack, unsigned int line_number)
 void nop(stack_t **stack, unsigned int line_number)
 {
 	(void)stack;
-    (void)line_number;
-    return;
+	(void)line_number;
+	return;
 }
