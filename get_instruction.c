@@ -3,6 +3,7 @@
  * get_instruction - Get Monty instruction
  * @line: String to extract command
  * @line_number: Line number of the current command
+ * @stack: double pointer to the beginning of the stack
  * Return: Pointer to instruction function
  */
 void (*get_instruction(char *line, unsigned int line_number))(
