@@ -53,7 +53,7 @@ void pchar(stack_t **stack, unsigned int line_number)
 		exit(EXIT_FAILURE);
 	}
 	c = (*stack)->n;
-	if (c > 127)
+	if ((*stack)->n < 0 || (*stack)->n > 127)
 	{
 		fprintf(stderr, "L%d: can't pchar, value out of range\n", line_number);
 		exit(EXIT_FAILURE);
@@ -79,7 +79,7 @@ void pstr(stack_t **stack, unsigned int line_number)
 	while (node != NULL)
 	{
 		c = node->n;
-		if (c == 0 || c > 127)
+		if (node->n <= 0 || node->n > 127)
 			break;
 		printf("%c", node->n);
 		node = node->next;
