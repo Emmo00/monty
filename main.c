@@ -30,7 +30,8 @@ int main(int ac, char **av)
 	while (fgets(line, sizeof(line), monty_file))
 	{
 		instruction = get_instruction(line, line_number);
-		instruction(&stack, line_number);
+		if (instruction != NULL)
+			instruction(&stack, line_number);
 		line_number++;
 	}
 	exit(EXIT_SUCCESS);
