@@ -1,5 +1,5 @@
 #include "monty.h"
-int n = 0;
+int n;
 /**
  * get_instruction - Get Monty instruction
  * @line: String to extract command
