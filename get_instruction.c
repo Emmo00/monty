@@ -19,7 +19,7 @@ void (*get_instruction(char *line, unsigned int line_number))(
 		{"", NULL}
 	};
 
-	int i = 0;
+	int i = 0, n = 0;
 	char *command;
 
 	command = strtok(line, " \n");
