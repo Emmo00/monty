@@ -35,7 +35,13 @@ typedef struct instruction_s
 	char *opcode;
 	void (*f)(stack_t **stack, unsigned int line_number);
 } instruction_t;
-
+/**
+ * get_instruction - Get Monty instruction
+ * @line: String to extract command
+ * @line_number: Line number of the current command
+ * @stack: double pointer to the beginning of the stack
+ * Return: Pointer to instruction function
+ */
 void (*get_instruction(char *line, unsigned int line_number))(
 	stack_t **stack, unsigned int line_number);
 void push(stack_t **stack, unsigned int line_number);
