@@ -45,14 +45,11 @@ void comment(stack_t **stack, unsigned int line_number)
  */
 void pchar(stack_t **stack, unsigned int line_number)
 {
-	char c;
-
 	if (*stack == NULL)
 	{
 		fprintf(stderr, "L%d: can't pchar, stack empty\n", line_number);
 		exit(EXIT_FAILURE);
 	}
-	c = (*stack)->n;
 	if ((*stack)->n < 0 || (*stack)->n > 127)
 	{
 		fprintf(stderr, "L%d: can't pchar, value out of range\n", line_number);
@@ -70,7 +67,6 @@ void pchar(stack_t **stack, unsigned int line_number)
 void pstr(stack_t **stack, unsigned int line_number)
 {
 	stack_t *node;
-	char c;
 	(void)line_number;
 
 	if (*stack == NULL)
@@ -78,7 +74,6 @@ void pstr(stack_t **stack, unsigned int line_number)
 	node = *stack;
 	while (node != NULL)
 	{
-		c = node->n;
 		if (node->n <= 0 || node->n > 127)
 			break;
 		printf("%c", node->n);
