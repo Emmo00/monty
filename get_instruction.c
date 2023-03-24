@@ -1,5 +1,5 @@
 #include "monty.h"
-int n;
+int n = 0;
 /**
  * get_instruction - Get Monty instruction
  * @line: String to extract command
@@ -20,7 +20,7 @@ void (*get_instruction(char *line, unsigned int line_number))(
 		{"", NULL}
 	};
 
-	int i = 0, n = 0;
+	int i = 0;
 	char *command;
 
 	command = strtok(line, " \n");
