@@ -52,7 +52,7 @@ void sub(stack_t **stack, unsigned int line_number)
 	free(tmp);
 }
 /**
- * div -  divides the second top element of the stack
+ * _div -  divides the second top element of the stack
  * by the top element of the stack
  * @stack: pointer to pointer to stack
  * @line_number: line number
