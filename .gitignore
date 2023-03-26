@@ -2,3 +2,7 @@
 tmp/
 # monty files
 *.m
+# executables
+*.exe
+*.a
+*.out

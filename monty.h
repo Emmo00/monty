@@ -59,6 +59,8 @@ void comment(stack_t **stack, unsigned int line_number);
 void pchar(stack_t **stack, unsigned int line_number);
 void pstr(stack_t **stack, unsigned int line_number);
 
+void free_stack(stack_t **stack);
+
 /* Monty File Pointer */
 extern int n; /* int passed in command */
 

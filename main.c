@@ -34,5 +34,6 @@ int main(int ac, char **av)
 			instruction(&stack, line_number);
 		line_number++;
 	}
+	free_stack(&stack);
 	exit(EXIT_SUCCESS);
 }
