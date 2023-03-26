@@ -24,11 +24,11 @@ void (*get_instruction(char *line, unsigned int line_number))(
 		{"#", comment},
 		{"pchar", pchar},
 		{"pstr", pstr},
-		{"", NULL}
-	};
+		{"", NULL}};
 
 	int i = 0;
-	char *command;
+	char *command, *endptr;
+	long int num;
 
 	command = strtok(line, " \n");
 	if (command == NULL)
@@ -42,12 +42,23 @@ void (*get_instruction(char *line, unsigned int line_number))(
 			if (strcmp(command, "push") == 0)
 			{
 				command = strtok(NULL, " \n");
-				n = atoi(command);
-				if (n == 0)
+				if (command == NULL)
 				{
 					fprintf(stderr, "L%d: usage: push integer\n", line_number);
 					exit(EXIT_FAILURE);
 				}
+				num = strtol(command, &endptr, 10);
+				if (*endptr != '\0')
+				{
+					fprintf(stderr, "L%d: usage: push integer\n", line_number);
+					exit(EXIT_FAILURE);
+				}
+				if (num > INT_MAX || num < INT_MIN)
+				{
+					fprintf(stderr, "L%d: integer out of range\n", line_number);
+					exit(EXIT_FAILURE);
+				}
+				n = (int)num;
 			}
 			return (instruct[i].f);
 		}
